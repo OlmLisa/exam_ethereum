@@ -83,7 +83,7 @@ class Details extends Component {
     tokenTransaction = async e => {
         const gas = await this.props.callContract.contract.methods.tokenTransaction(this.state._from, this.state._to, this.state.tokens).estimateGas();
         this.props.callContract.contract.methods.tokenTransaction(this.state._from, this.state._to, this.state.tokens)
-            .send({ from: "0x17Be9fbe3A62c2B4eE7956B3591Abf1eE69E4482", gas });
+            .send({ from: this.state._from, gas });
     }
 
     // createdSuccess = () => {
